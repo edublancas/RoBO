@@ -193,6 +193,8 @@ class BayesianOptimization(BaseSolver):
 
             self.runtime.append(time.time() - self.start_time)
 
+            yield it
+
             if self.save_output and it % self.num_save == 0:
                 hypers = self.model.hypers
                 self.save_json(it)

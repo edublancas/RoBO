@@ -118,13 +118,15 @@ def bayesian_optimization(objective_function, lower, upper, num_iterations=30,
                               acquisition_func, gp, max_func,
                               initial_points=n_init, rng=rng)
 
-    x_best, f_min = bo.run(num_iterations)
+    return bo
 
-    results = dict()
-    results["x_opt"] = x_best
-    results["f_opt"] = f_min
-    results["incumbents"] = [inc for inc in bo.incumbents]
-    results["incumbent_values"] = [val for val in bo.incumbents_values]
-    results["runtime"] = bo.runtime
-    results["overhead"] = bo.time_overhead
-    return results
+    # x_best, f_min = bo.run(num_iterations)
+
+    # results = dict()
+    # results["x_opt"] = x_best
+    # results["f_opt"] = f_min
+    # results["incumbents"] = [inc for inc in bo.incumbents]
+    # results["incumbent_values"] = [val for val in bo.incumbents_values]
+    # results["runtime"] = bo.runtime
+    # results["overhead"] = bo.time_overhead
+    # return results
