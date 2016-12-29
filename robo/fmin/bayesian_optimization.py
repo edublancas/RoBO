@@ -118,7 +118,7 @@ def bayesian_optimization(objective_function, lower, upper, num_iterations=30,
                               acquisition_func, gp, max_func,
                               initial_points=n_init, rng=rng)
 
-    return bo
+    return bo.run(num_iterations=num_iterations)
 
     # x_best, f_min = bo.run(num_iterations)
 
